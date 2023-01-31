@@ -5,8 +5,17 @@ Students List
 {% endblock title %}
 
 {% block body %}
+<style>
+  body{
+    background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  }
+  .btn:hover{
+    font-weight:bold;
+        text-decoration:wavy
+  }
+</style>
 <a class="btn btn-primary mt-4 mb-4 ms-4" href="/add_new_student">Add New Student</a>
-<table class="table table-bordered ">
+<table class="table table-bordered table-dark">
     <thead>
       <tr>
         <th scope="col">Roll No</th>
