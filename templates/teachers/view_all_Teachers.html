@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Teachers List
+{% endblock title %}
+
+{% block body %}
+
+<a class="btn btn-primary mt-4 mb-4 ms-4" href="/add-new-teacher">Add New Teacher</a>
+<table class="table table-bordered table-dark ">
+    <thead>
+      <tr>
+        <th scope="col">Teacher ID#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for teacher in teachers %}
+      <tr>
+        <th scope="row">{{teacher['id']}}</th>
+        <td>{{teacher['f_name']}}</td>
+        <td>{{teacher['l_name']}}</td>
+        <td>{{teacher['Qualification']}}</td>
+        <td>{{teacher['dofbirth']}}</td>
+        <td>{{teacher['salary']}}</td>
+        <td>
+            <a class="btn btn-primary" href="/edit.teacher/{{teacher['id']}}">Edit</a>
+            <a class="btn btn-danger" href="/expell.teacher/{{teacher['id']}}">Delete</a>
+            <a class="btn btn-success" href="/teacher.detail/{{teacher['id']}}">View</a>
+            </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock body %}
